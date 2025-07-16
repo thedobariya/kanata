@@ -51,7 +51,7 @@ This configuration provides:
 2. **Clone or Download This Configuration**:
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/thedobariya/kanata.git
    # Or download the german_iso_qwerty.kbd file directly
    ```
 
