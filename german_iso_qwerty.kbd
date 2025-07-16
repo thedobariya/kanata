@@ -1,0 +1,47 @@
+;; ───────────────────────────────────────────────────────────────────
+;; modifiers_only.kbd
+;; Home‑row tap‑hold: Ctrl, Shift, Win, Alt, RCtrl, RShift, RWin
+;; ───────────────────────────────────────────────────────────────────
+
+(defcfg
+  process-unmapped-keys yes   ;; let all other keys pass through
+)
+
+;; Only override these keys:
+(defsrc
+  d f j k s l h c v x
+)
+
+(defalias
+  ;; Home‑row tap‑hold:
+  ;; tap = letter, hold = modifier
+  copy  C-c
+  paste C-v
+  cut   C-x
+
+  d (tap-hold 200 200 d lctl)   
+  f (tap-hold 200 200 f lsft)   
+  j (tap-hold 200 200 j rsft)   
+  k (tap-hold 200 200 k rctl)   
+  s (tap-hold 200 200 s lmet)
+  l (tap-hold 200 200 l rmet)    ;; Right Win (Windows key)
+  h (tap-hold 200 200 h ralt)    ;; Right Alt
+
+  c     (tap-hold 200 200 c @copy)   ;; tap = "c", hold = copy
+  v     (tap-hold 200 200 v @paste)  ;; tap = "v", hold = paste   
+  x     (tap-hold 200 200 x @cut)    ;; tap = "x", hold = cut
+)
+
+;; Base layer: apply our aliases; all other keys are transparent
+(deflayer base
+   @d @f @j @k @s @l @h @c @v @x
+)
+
+
+;;  a (tap-hold 200 200 a lctl)   ;; Left Ctrl
+;;  s (tap-hold 200 200 s lsft)   ;; Left Shift
+;;  d (tap-hold 200 200 d lmet)   ;; Left Win (Windows key)
+;;  f (tap-hold 200 200 f lalt)   ;; Left Alt
+;;  g (tap-hold 200 200 g rctl)   ;; Right Ctrl
+;;  h (tap-hold 200 200 h rsft)   ;; Right Shift
+;;  j (tap-hold 200 200 j rmet)   ;; Right Win
