@@ -9,7 +9,7 @@
 
 ;; Only override these keys:
 (defsrc
-  d f j k s l h c v x
+  d f j k c v x
 )
 
 (defalias
@@ -23,9 +23,9 @@
   f (tap-hold 200 200 f lsft)   
   j (tap-hold 200 200 j rsft)   
   k (tap-hold 200 200 k rctl)   
-  s (tap-hold 200 200 s lmet)
-  l (tap-hold 200 200 l rmet)    ;; Right Win (Windows key)
-  h (tap-hold 200 200 h ralt)    ;; Right Alt
+;;  s (tap-hold 200 200 s lmet)
+;;  l (tap-hold 200 200 l rmet)    ;; Right Win (Windows key)
+;;  h (tap-hold 200 200 h ralt)    ;; Right Alt
 
   c     (tap-hold 200 200 c @copy)   ;; tap = "c", hold = copy
   v     (tap-hold 200 200 v @paste)  ;; tap = "v", hold = paste   
@@ -34,7 +34,7 @@
 
 ;; Base layer: apply our aliases; all other keys are transparent
 (deflayer base
-   @d @f @j @k @s @l @h @c @v @x
+   @d @f @j @k @c @v @x
 )
 
 
